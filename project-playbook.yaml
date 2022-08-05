@@ -1,6 +1,8 @@
 ---
 -
   hosts: localhost
+  become: yes
+  become_method: sudo
   tasks:
     - name: Install docker on centos7
       yum:
