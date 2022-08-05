@@ -1,0 +1,32 @@
+---
+-
+  hosts: all
+  become: true
+  tasks:
+    - name: Install docker on centos7
+      yum:
+        name: java
+        enablerepo: "epel,docker-ce"
+
+    - name: Install docker on centos7
+      yum:
+        name: docker
+        enablerepo: "epel,docker-ce"
+      
+    - name: Run Shell Scripts for tomcat
+      shell:
+        cmd: ./install.sh
+
+    - name: Run Shell Scripts for adding users
+      shell:
+        cmd: ./useradd.sh
+
+    - name: Start container with healthstatus
+      docker_container:
+        name: jenkins-container
+        image: jenkins/jenkins
+        state: started
+        ports:
+          - "8080:8085"
+        volumes: 
+          - myjenkins
