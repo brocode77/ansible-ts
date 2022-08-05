@@ -14,11 +14,11 @@
       
     - name: Run Shell Scripts for tomcat
       shell:
-        cmd: ./install.sh
+        cmd: sudo ./install.sh
 
     - name: Run Shell Scripts for adding users
       shell:
-        cmd: ./useradd.sh
+        cmd: sudo ./useradd.sh
 
     - name: Start container with healthstatus
       docker_container:
