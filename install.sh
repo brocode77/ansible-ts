@@ -10,8 +10,6 @@ fi
 if [ -e *.tar.gz ]; then
     echo "File exists, removing file"
     rm -rf apache*
-    exit 1
-else
     echo "Downloading Apache Tomcat"
     wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz --no-check-certificate
 fi
