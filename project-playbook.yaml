@@ -15,10 +15,14 @@
     - name: Run Shell Scripts for tomcat
       shell:
          "./install.sh"
+      args:
+         executable: /bin/bash
 
     - name: Run Shell Scripts for adding users
       shell:
          "./useradd.sh"
+      args:
+         executable: /bin/bash
 
     - name: Start container with healthstatus
       docker_container:
