@@ -4,13 +4,11 @@
   tasks:
     - name: Install docker on centos7
       yum:
-        name: java
-        enablerepo: "epel,docker-ce"
+        name: java-1.8.0-openjdk.x86_64
 
     - name: Install docker on centos7
       yum:
         name: docker
-        enablerepo: "epel,docker-ce"
       
     - name: Run Shell Scripts for tomcat
       shell:
