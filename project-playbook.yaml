@@ -1,7 +1,6 @@
 ---
 -
   hosts: localhost
-  become: true
   tasks:
     - name: Install docker on centos7
       yum:
