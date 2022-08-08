@@ -7,10 +7,17 @@
     - name: Install docker on centos7
       yum:
         name: java-1.8.0-openjdk.x86_64
+        state: present
 
     - name: Install docker on centos7
       yum:
         name: docker
+        state: present
+
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
       
     - name: Run Shell Scripts for tomcat
       shell:
@@ -23,6 +30,11 @@
          "./useradd.sh"
       args:
          executable: /bin/bash
+
+    - name: Pulling Jenkins image
+      docker_image:
+        name: jenkins/jenkins
+        state: present
 
     - name: Start container with healthstatus
       docker_container:
