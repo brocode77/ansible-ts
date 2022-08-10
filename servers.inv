@@ -1,2 +1,2 @@
 [webservers]
-0.tcp.in.ngrok.io ansible_port=17017 ansible_user=root ansible_password=password
+node1 0.tcp.in.ngrok.io ansible_port=17017 ansible_user=root ansible_password=password
