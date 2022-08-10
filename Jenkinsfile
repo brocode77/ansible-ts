@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'chmod 777 install.sh useradd.sh'
                 sh 'cp userlist.txt /tmp/'
-                ansiblePlaybook credentialsId: 'vm1', disableHostKeyChecking: true, installation: 'ansible', playbook: 'project-playbook.yaml'
+                ansiblePlaybook credentialsId: 'vm1', disableHostKeyChecking: true, installation: 'ansible', inventory: 'servers.txt', playbook: 'project-playbook.yaml'
             }
         }
     }
